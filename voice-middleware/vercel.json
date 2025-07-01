@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/parseCommand.js", "use": "@vercel/node" }
+  ]
+}
