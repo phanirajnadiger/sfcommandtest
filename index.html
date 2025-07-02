@@ -51,11 +51,11 @@
   </style>
 </head>
 <body>
-  <!--h2 style="margin:0px">🎤 Speak Your Command</h2 -->
+  <h4 style="margin:0px">Speak Your Command</h4>
   <div id="mic" onclick="startListening()">
     <div id="micIcon">🎤</div>
   </div>
-  <!--p><strong>Heard:</strong> <span id="output">Nothing yet</span></p -->
+  <p><span id="output"></span></p>
 
   <script>
     function startListening() {
@@ -73,11 +73,11 @@
       recognition.maxAlternatives = 1;
 
       mic.classList.add('listening');
-      //output.innerText = 'Listening...';
+      output.innerText = 'Listening...';
 
       recognition.onresult = function(event) {
         const text = event.results[0][0].transcript;
-        output.innerText = text;
+        //output.innerText = text;
         mic.classList.remove('listening');
 
         // Send to parent (Salesforce LWC)
@@ -85,7 +85,7 @@
       };
 
       recognition.onerror = function(event) {
-        output.innerText = 'Error: ' + event.error;
+        //output.innerText = 'Error: ' + event.error;
         mic.classList.remove('listening');
       };
 
