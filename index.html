@@ -12,8 +12,8 @@
     }
 
     #mic {
-      width: 80px;
-      height: 80px;
+      width: 40px;
+      height: 40px;
       background: red;
       border-radius: 50%;
       margin: 20px auto;
@@ -26,7 +26,7 @@
 
     #micIcon {
       color: white;
-      font-size: 40px;
+      font-size: 25px;
     }
 
     .listening {
@@ -51,11 +51,11 @@
   </style>
 </head>
 <body>
-  <h2>🎤 Speak Your Command</h2>
+  <h2 style="margin:0px;">Speak Your Command</h2>
   <div id="mic" onclick="startListening()">
     <div id="micIcon">🎤</div>
   </div>
-  <p><strong>Heard:</strong> <span id="output">Nothing yet</span></p>
+  <p style="display:none"><strong>Heard:</strong> <span id="output">Nothing yet</span></p>
 
   <script>
     function startListening() {
