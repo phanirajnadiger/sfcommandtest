@@ -12,8 +12,8 @@
     }
 
     #mic {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       background: red;
       border-radius: 50%;
       margin: 20px auto;
@@ -26,11 +26,11 @@
 
     #micIcon {
       color: white;
-      font-size: 20px;
+      font-size: 40px;
     }
 
     .listening {
-      animation: pulse 2s infinite;
+      animation: pulse 1s infinite;
       background-color: green;
     }
 
@@ -51,11 +51,11 @@
   </style>
 </head>
 <body>
-  <h4 style="margin:0px">Speak Your Command</h4>
+  <h2>🎤 Speak Your Command</h2>
   <div id="mic" onclick="startListening()">
     <div id="micIcon">🎤</div>
   </div>
-  <p><span id="output"></span></p>
+  <p><strong>Heard:</strong> <span id="output">Nothing yet</span></p>
 
   <script>
     function startListening() {
@@ -77,7 +77,7 @@
 
       recognition.onresult = function(event) {
         const text = event.results[0][0].transcript;
-        //output.innerText = text;
+        output.innerText = text;
         mic.classList.remove('listening');
 
         // Send to parent (Salesforce LWC)
@@ -85,7 +85,7 @@
       };
 
       recognition.onerror = function(event) {
-        //output.innerText = 'Error: ' + event.error;
+        output.innerText = 'Error: ' + event.error;
         mic.classList.remove('listening');
       };
 
