@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Voice Input</title>
   <style>
     body {
@@ -53,7 +54,9 @@
 <body>
   
   <div id="mic" onclick="startListening()">
-    <div id="micIcon">🎤</div>
+    <div id="micIcon">
+        <div class="fa fa-microphone" style="font-size:32px;color:red"></div>
+    </div>
   </div>
   <p style="display:none"><strong>Heard:</strong> <span id="output">Nothing yet</span></p>
 
